@@ -6,7 +6,8 @@
     "dev:client": "npm run dev --prefix client",
     "dev:server": "npm run dev --prefix server",
     "build": "npm run build --prefix client",
-    "start": "npm run start --prefix server"
+    "start": "npm run start --prefix server",
+    "postinstall": "cd client && npm install"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
