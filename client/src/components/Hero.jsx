@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import perfil from "../assets/my_perfil.png";
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const img = new Image();
+    img.onload = () => setVisible(true);
+    img.onerror = () => setVisible(true);
+    img.src = perfil;
   }, []);
 
   return (
-    <section id="hero" className={mounted ? "hero--visible" : ""}>
+    <section id="hero" className={visible ? "hero--visible" : ""}>
       <div className="hero__content">
         <div className="hero__avatar">
           <div className="hero__glow" />
