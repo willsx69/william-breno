@@ -23,9 +23,11 @@ const projects = [
   },
 ];
 
+import AnimatedSection from "./AnimatedSection";
+
 export default function Projects() {
   return (
-    <section id="projects">
+    <AnimatedSection id="projects">
       <h2>Projetos</h2>
       <div className="projects-grid">
         {projects.map((project, index) => (
@@ -44,6 +46,6 @@ export default function Projects() {
           </div>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

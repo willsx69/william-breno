@@ -1,11 +1,44 @@
+import { useEffect, useState } from "react";
 import perfil from "../assets/my_perfil.png";
 
 export default function Hero() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <section id="hero">
-      <img src={perfil} alt="William Breno" className="perfil" />
-      <h1>Olá, eu sou William Breno</h1>
-      <p>Desenvolvedor Full Stack</p>
+    <section id="hero" className={mounted ? "hero--visible" : ""}>
+      <div className="hero__content">
+        <div className="hero__avatar">
+          <div className="hero__glow" />
+          <img src={perfil} alt="William Breno" />
+        </div>
+        <h1 className="hero__title">
+          Olá, eu sou <span className="hero__highlight">William Breno</span>
+        </h1>
+        <p className="hero__role">Desenvolvedor Full Stack</p>
+        <p className="hero__description">
+          Transformando ideias em produtos digitais modernos e funcionais
+        </p>
+        <div className="hero__actions">
+          <a href="#about" className="btn btn--primary">
+            Conheça meu trabalho
+          </a>
+          <a href="#contact" className="btn btn--outline">
+            Entre em contato
+          </a>
+        </div>
+      </div>
+      <div className="hero__scroll">
+        <span className="hero__scroll-text">Role para conhecer</span>
+        <div className="hero__scroll-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </section>
   );
 }

@@ -23,9 +23,11 @@ const categories = [
 const iconUrl = (path) =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}`;
 
+import AnimatedSection from "./AnimatedSection";
+
 export default function Skills() {
   return (
-    <section id="skills">
+    <AnimatedSection id="skills">
       <h2>Minhas Tecnologias</h2>
       <div className="skills-wrapper">
         {categories.map((cat) => (
@@ -48,6 +50,6 @@ export default function Skills() {
           </div>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

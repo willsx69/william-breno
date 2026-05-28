@@ -10,7 +10,7 @@ const links = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("hero");
 
   useEffect(() => {
     const ids = links.map((l) => l.href.slice(1));
@@ -22,7 +22,7 @@ export default function Header() {
           }
         }
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      { rootMargin: "-80px 0px -60% 0px" }
     );
 
     ids.forEach((id) => {
